@@ -1,7 +1,7 @@
 {
-  "name": "APPNAME",
-  "short_name": "APPNAME",
-  "description": "Free APPNAME app — part of FreeAppStore",
+  "name": "Whenly",
+  "short_name": "Whenly",
+  "description": "Anonymous weekly time-slot voting — part of FreeAppStore",
   "start_url": "/",
   "display": "standalone",
   "orientation": "any",

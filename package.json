@@ -1,13 +1,15 @@
 {
-  "name": "APPNAME",
+  "name": "whenly",
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "engines": { "node": ">=22" },
   "pnpm": { "onlyBuiltDependencies": ["esbuild"] },
+  "repository": { "type": "git", "url": "git+https://github.com/freeappstore-online/whenly.git" },
   "scripts": {
-    "dev": "pnpm --filter @APPNAME/web dev",
-    "build": "pnpm --filter @APPNAME/web build",
-    "preview": "pnpm --filter @APPNAME/web preview",
-    "typecheck": "pnpm --filter @APPNAME/web exec tsc -b"
+    "dev": "pnpm --filter @whenly/web dev",
+    "build": "pnpm --filter @whenly/web build",
+    "preview": "pnpm --filter @whenly/web preview",
+    "typecheck": "pnpm --filter @whenly/web exec tsc -b",
+    "test": "pnpm --filter @whenly/web exec tsc -b"
   }
 }
