@@ -50,9 +50,14 @@ export function Shell({ children, user }: { children: ReactNode; user: User | nu
                 <button onClick={() => fas.auth.signOut()} className="text-xs text-gray-500 hover:text-white">Sign out</button>
               </div>
             ) : (
-              <button onClick={() => fas.auth.signIn()} className="rounded-lg bg-violet-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-violet-700">
-                Sign in
-              </button>
+              <div className="flex items-center gap-2">
+                <button onClick={() => fas.auth.signIn('github')} className="rounded-lg bg-violet-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-violet-700">
+                  Sign in with GitHub
+                </button>
+                <button onClick={() => fas.auth.signIn('google')} className="rounded-lg bg-violet-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-violet-700">
+                  Sign in with Google
+                </button>
+              </div>
             )}
           </div>
 
@@ -86,9 +91,14 @@ export function Shell({ children, user }: { children: ReactNode; user: User | nu
                   <button onClick={() => { fas.auth.signOut(); setMenuOpen(false) }} className="text-xs text-gray-500">Sign out</button>
                 </div>
               ) : (
-                <button onClick={() => { fas.auth.signIn(); setMenuOpen(false) }} className="block w-full rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-semibold text-white">
-                  Sign in with GitHub
-                </button>
+                <div className="flex flex-col gap-2">
+                  <button onClick={() => { fas.auth.signIn('github'); setMenuOpen(false) }} className="block w-full rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-semibold text-white">
+                    Sign in with GitHub
+                  </button>
+                  <button onClick={() => { fas.auth.signIn('google'); setMenuOpen(false) }} className="block w-full rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-semibold text-white">
+                    Sign in with Google
+                  </button>
+                </div>
               )}
             </div>
           </nav>
