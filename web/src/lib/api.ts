@@ -1,8 +1,8 @@
 import type { Poll, PollDoc, VoteDoc } from '../types'
 import { fas } from './fas'
 
-const polls = fas.db.collection('polls')
-const votes = fas.db.collection('votes')
+const polls = fas.collections.collection('polls')
+const votes = fas.collections.collection('votes')
 
 function assemblePoll(doc: PollDoc, voteDocs: VoteDoc[]): Poll {
   const pollVotes: Poll['votes'] = {}
