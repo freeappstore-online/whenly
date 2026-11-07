@@ -1,8 +1,10 @@
 import type { Poll, PollDoc, VoteDoc } from '../types'
 import { fas } from './fas'
 
-const polls = fas.collections.collection('polls')
-const votes = fas.collections.collection('votes')
+// Shared collections (`fas db share polls votes`): anyone with the poll link reads them.
+// `_owner` is only present on the signed-in user's own vote, which is how they find it.
+const polls = fas.collections.collection('polls', { visibility: 'public-read' })
+const votes = fas.collections.collection('votes', { visibility: 'public-read' })
 
 function assemblePoll(doc: PollDoc, voteDocs: VoteDoc[]): Poll {
   const pollVotes: Poll['votes'] = {}
